@@ -1,0 +1,180 @@
+       /* 1. What is CSS Animation?
+        CSS animation allows an element to change properties. */
+        .box {
+
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px;
+        }
+        .box-0 {
+            /* 3. animation-name */
+            animation: movebox;
+            /* 4. animation-duration */
+            animation-duration: 3s;
+            /* 5. animation-timing-function */
+            animation-timing-function: ease-out;
+            /* 6. animation-delay */
+            animation-delay: 1s;
+            /* 7. animation-iteration-count */
+            animation-iteration-count: 2;
+            /* 8. animation-direction */
+            animation-direction: reverse;
+            /* 9. animation-fill-mode */
+            animation-fill-mode: both;
+            /* 10. animation-play-state */
+            animation-play-state: running;
+        }
+        /* 11. Animation Shorthand */
+        .box-1 {
+            animation: movebox 2s ease-in 0.5s 3 reverse both;
+        }
+        /* 12. Moving Animation */
+        /* 2. @keyframes */
+        @keyframes movebox {
+            from {
+                transform: translate(0);
+            }
+            to {
+                transform: translateX(300px);
+            }
+        }
+        @keyframes move {
+            from {
+                transform: translate(0);
+            }
+
+            to {
+                transform: translateX(400px);
+            }
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes scalebox {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.5);
+            }
+        }
+        @keyframes colors {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: blue;
+            }
+            50% {
+                background-color: green;
+            }
+            75% {
+                background-color: orange;
+            }
+            100% {
+                background-color: purple;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .box-2 {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            animation: move 2s infinite alternate;
+        }
+        /* 13. Rotating Animation */
+        .box-3 {
+            animation: rotate 2s infinite linear;
+        }
+        /* 14. Scaling Animation */
+        .box-4 {
+            animation: scalebox 2s infinite alternate;
+        }
+        /* 15. Changing Colors */
+        .box-5 {
+            animation: colors 4s infinite;
+        }
+        /* 16. Fade-In Animation */
+        .box-6 {
+            animation: fadeIn 2s ease;
+        }
+        /* 17. Bounce Animation */
+        .box-7{
+            animation: bounce 1s infinite;
+        }
+        /* 18. Multiple Properties */
+        .box-8{
+            animation: coolAnimation 3s infinite alternate;
+        }
+@keyframes coolAnimation {
+    0%{
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateX(300px) rotate(360deg);
+        opacity: 0.5;
+        border-radius: 50%;
+    }
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid black;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.button-sm {
+    padding: 15px 30px;
+    border: none;
+    background: black;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
